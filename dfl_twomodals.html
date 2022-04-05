@@ -1,0 +1,96 @@
+<style>
+body { max-width: 650px; margin: 0 auto !important; float: none !important; }
+
+/* not yet finished, works on second click, and needs private addressable classes */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0; top: 0;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+        
+/* Modal Content */
+.modal-content { background-color: #fefefe; 
+    margin: 5px; font-size: 80%; padding: 5px; 
+    width: 80%;
+    border: 1px solid #888; }
+        
+/* The Close Button */
+.close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }    
+.close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
+    
+.modal-content2 {
+    display: none; /* Hidden by default */
+    background-color: #fefefe;
+    margin: auto; padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close2 { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }
+.close2:hover, .close2:focus { color: #000; text-decoration: none;cursor: pointer; }
+
+.scroll-box {
+      width: 650px; /* maximum width of the box, feel free to change this! */
+      overflow-x: scroll; white-space: nowrap;     }
+</style>
+
+<h1>This is a two modal test</h1>
+<p>The 2nd Button, strangly</p>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn2" onclick="showmodal('myModal2','myBtn2','close2')">More Latin</button>
+<!-- The Modal -->
+<div id="myModal2" class="modal"><!-- Modal content -->
+    <div class="modal-content" style="width: 80%;"> 
+        <span class="close2">×</span>
+        <p style="font-size: 120%;">A 2nd example modal</p>
+        <p style="font-size: 102%;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+</div>
+</div>
+
+<hr>
+
+<p>And no 1</p>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" onclick="showmodal('myModal','myBtn','close')">Click Me</button>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+    <span class="close">×</span>
+    <p style="font-size: 120%;">An example modal</p>
+    <p style="font-size: 102%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+
+<p>HTML End</p>
+
+<script>
+// Get the modal  
+function showmodal (id,bid,clid) {
+   var modal = document.getElementById(id);
+// Get the button that opens the modal
+   var btn = document.getElementById(bid);
+// Get the <span> element that closes the modal
+   var span = document.getElementsByClassName(clid)[0];
+// When the user clicks on the button, open the modal
+   btn.onclick = function() { modal.style.display = "block"; }
+// When the user clicks on <span> (x), close the modal
+    span.onclick = function() { modal.style.display = "none"; }
+// When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    } 
+}
+</script>
+
+<p>End Script</p>
